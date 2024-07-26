@@ -21,6 +21,13 @@ if build_jack_rec
   )
 endif
 
+exe_jack_rec = executable(
+  'jack_log',
+  sources: ['jack_log.c'],
+  dependencies: [dep_jack, dep_sndfile, dep_threads],
+  install: true
+)
+
 exe_jack_impulse_grabber = executable(
   'jack_impulse_grabber',
   sources: ['impulse_grabber.c'],
